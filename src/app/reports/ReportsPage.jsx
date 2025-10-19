@@ -1,13 +1,25 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Table from '@/components/Table';
 import Section from '@/components/Section';
 import ModalReportView from "@/components/ModalReportView";
 import { Trash, Search } from 'lucide-react';
 
-export default function ReportsPage({ reports }) {
+export default function ReportsPage() {
+  const [reports, setReports] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const getAllReports = async () => {
+    const res = await fetch('/api/report');
+    const data = await res.json();
+    console.log(data)
+    setReports(data.data);
+  }
+
+  useEffect(() => {
+    getAllReports();
+  }, [])
 
   // Filter reports based on search term
   const filteredReports = useMemo(() => {

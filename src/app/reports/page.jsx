@@ -6,21 +6,21 @@ export const metadata = {
   description: "Simple, powerful data comparison and analysis",
 };
 
-const getReports = async () => {
+// const getReports = async () => {
 
-  try {
-    const reports = await dbHelper.all('SELECT * FROM reports ORDER BY id DESC');
-    return reports;
-  } catch (error) {
-    console.error('Failed to fetch reports:', error);
-    return [];
-  }
-};
+//   try {
+//     const reports = await dbHelper.all('SELECT * FROM reports ORDER BY id DESC');
+//     return reports;
+//   } catch (error) {
+//     console.error('Failed to fetch reports:', error);
+//     return [];
+//   }
+// };
 
 export default async function Reports() {
-  const reports = await getReports();
+  // const reports = await getReports();
 
   return <>
-    <ReportsPage reports={ reports } />
+    <ReportsPage />
   </>;
 };
