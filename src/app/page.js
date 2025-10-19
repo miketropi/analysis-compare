@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -51,17 +53,9 @@ export default function Home() {
 
         {/* CTA */}
         <div className="text-center space-y-4">
-          <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-medium transition-colors">
+          <Link href="/reports" className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-medium transition-colors">
             Get Started
-          </button>
-          <div className="text-sm">
-            <a 
-              href="/setup" 
-              className="text-blue-600 hover:text-blue-700 underline"
-            >
-              Database Setup
-            </a>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
