@@ -22,7 +22,8 @@ export default function ModalReportView({ reportItem }) {
 
   const getSourceStandard = async () => {
     try {
-      const res = await fetch(`/api/source-standard/${reportItem?.name}`, {
+      let string_time = new Date().toISOString();
+      const res = await fetch(`/api/source-standard/${reportItem?.name}?time=${string_time}`, {
         cache: 'no-store',
       });
       if (res.ok) {

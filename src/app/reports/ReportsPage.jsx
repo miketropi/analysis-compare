@@ -11,7 +11,8 @@ export default function ReportsPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const getAllReports = async () => {
-    const res = await fetch('/api/report', {
+    let string_time = new Date().toISOString();
+    const res = await fetch(`/api/report?time=${string_time}`, {
       cache: 'no-store',
     });
     const data = await res.json();
