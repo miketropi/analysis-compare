@@ -7,8 +7,14 @@ export const metadata = {
 };
 
 const getReports = async () => {
-  const reports = await dbHelper.all('SELECT * FROM reports ORDER BY id DESC');
-  return reports;
+
+  try {
+    const reports = await dbHelper.all('SELECT * FROM reports ORDER BY id DESC');
+    return reports;
+  } catch (error) {
+    console.error('Failed to fetch reports:', error);
+    return [];
+  }
 };
 
 export default async function Reports() {
