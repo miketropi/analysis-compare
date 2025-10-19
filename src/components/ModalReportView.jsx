@@ -5,10 +5,7 @@ import { useModal } from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import { Eye, Wrench, Pencil, Copy, CircleX, Save } from 'lucide-react';
 import Table from './Table';
-import Editor from 'react-simple-code-editor';
 import { textareaToHtml, filterTextContent, highlightMatchingParagraphs, removeAllAttributesFromHtml } from '@/lib/helpers';
-import ReactDiffViewer from 'react-diff-viewer';
-import Highlighter from 'react-highlight-words';
 
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
