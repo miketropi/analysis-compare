@@ -22,7 +22,9 @@ export default function ModalReportView({ reportItem }) {
 
   const getSourceStandard = async () => {
     try {
-      const res = await fetch(`/api/source-standard/${reportItem?.name}`);
+      const res = await fetch(`/api/source-standard/${reportItem?.name}`, {
+        cache: 'no-store',
+      });
       if (res.ok) {
         const data = await res.json();
         if(!data?.content || !data.content) {
