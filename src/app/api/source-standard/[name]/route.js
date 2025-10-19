@@ -1,5 +1,7 @@
 import { dbHelper } from '@/lib/dbHelper.js';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(_request, { params }) {
   const { name } = params;
   const sourceStandard = await dbHelper.get('SELECT * FROM sourceStandard WHERE name = ?', [name]);
